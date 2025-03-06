@@ -15,12 +15,15 @@ async function uploadFile() {
             method: "POST",
             body: formData
         });
+
         let result = await response.json();
 
         if (result.success) {
             document.getElementById("status").innerText = "Upload successful!";
             document.getElementById("fileLink").innerHTML =
                 `<a href="${result.fileUrl}" target="_blank">Download File</a>`;
+
+            startCountdown(5 * 60); // 5-minute countdown
         } else {
             document.getElementById("status").innerText = "Upload failed!";
         }
@@ -28,4 +31,24 @@ async function uploadFile() {
         console.error("Error:", error);
         document.getElementById("status").innerText = "Upload error!";
     }
+}
+
+function startCountdown(seconds) {
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+        let minutes = Math.floor(seconds / 60);
+        let secs = seconds % 60;
+        timerElement.innerText = `Link expires in: ${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+
+        if (seconds > 0) {
+            seconds--;
+            setTimeout(updateTimer, 1000);
+        } else {
+            timerElement.innerText = "Link expired!";
+            document.getElementById("fileLink").innerHTML = ""; // Remove download link
+        }
+    }
+
+    updateTimer();
 }

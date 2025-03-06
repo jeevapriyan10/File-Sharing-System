@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Sharing System</title>
+    <title>File Upload</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h1>Secure File Sharing</h1>
-    <p>Upload and share files easily with time-limited access.</p>
+<input type="file" id="fileInput">
+<button onclick="uploadFile()">Upload</button>
+<p id="status"></p>
+<div id="fileLink"></div>
+<p id="timer"></p> <!-- Expiry Timer Display -->
 
-    <div class="upload-box">
-        <input type="file" id="fileInput">
-        <button onclick="uploadFile()">Upload File</button>
-    </div>
-
-    <p id="status"></p>
-    <div id="fileLink"></div>
-</div>
-
-<script src="script.js"></script>
+<script src="script.js"></script> <!-- Separate JS file -->
 </body>
 </html>
