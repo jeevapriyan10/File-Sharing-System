@@ -1,3 +1,5 @@
+let backendURL = "https://yourapp.onrender.com"; // Change to your hosted URL
+
 async function uploadFile() {
     const fileInput = document.getElementById("fileInput");
     if (!fileInput.files.length) {
@@ -11,7 +13,7 @@ async function uploadFile() {
     document.getElementById("status").innerText = "Uploading...";
 
     try {
-        let response = await fetch("http://localhost:3000/upload", {
+        let response = await fetch(`${backendURL}/upload`, {
             method: "POST",
             body: formData
         });
@@ -31,24 +33,4 @@ async function uploadFile() {
         console.error("Error:", error);
         document.getElementById("status").innerText = "Upload error!";
     }
-}
-
-function startCountdown(seconds) {
-    const timerElement = document.getElementById("timer");
-
-    function updateTimer() {
-        let minutes = Math.floor(seconds / 60);
-        let secs = seconds % 60;
-        timerElement.innerText = `Link expires in: ${minutes}:${secs < 10 ? "0" : ""}${secs}`;
-
-        if (seconds > 0) {
-            seconds--;
-            setTimeout(updateTimer, 1000);
-        } else {
-            timerElement.innerText = "Link expired!";
-            document.getElementById("fileLink").innerHTML = ""; // Remove download link
-        }
-    }
-
-    updateTimer();
 }
