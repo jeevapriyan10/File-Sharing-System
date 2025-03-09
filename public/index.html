@@ -7,12 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<input type="file" id="fileInput">
-<button onclick="uploadFile()">Upload</button>
-<p id="status"></p>
-<div id="fileLink"></div>
-<p id="timer"></p> <!-- Expiry Timer Display -->
-
-<script src="script.js"></script> <!-- Separate JS file -->
+    <div class="container">
+        <h1>Welcome to the File Upload Service</h1>
+        <p class="intro-text">Easily upload your files and share them with the world! Just select your file, upload it, and get a link to access your file anywhere.</p>
+        <div class="upload-section">
+            <h2>Upload Your File</h2>
+            <input type="file" id="fileInput" class="file-input">
+            <button onclick="uploadFile()" class="upload-btn">Upload</button>
+            <p id="status" class="status-text"></p>
+            <div id="fileLink" class="file-link-container"></div>
+            <p id="timer" class="expiry-timer"></p> 
+        </div>
+        <div class="about-section">
+            <h2>How It Works</h2>
+            <p>Our service allows you to upload any file and get a unique, shareable link. This link allows you to share your file with friends, colleagues, or the world. Here’s how it works:</p>
+            <ul class="steps-list">
+                <li><strong>Step 1:</strong> Choose the file you want to upload from your device.</li>
+                <li><strong>Step 2:</strong> Hit the "Upload" button and wait for your file to be uploaded.</li>
+                <li><strong>Step 3:</strong> Once uploaded, you’ll get a link to access the file from any device or location.</li>
+            </ul>
+        </div>
+        <div class="benefits-section">
+            <h2>Why Use Our Service?</h2>
+            <div class="benefit-item">
+                <h3>Easy to Use</h3>
+                <p>Our platform is designed to be user-friendly. You can upload a file in just a few clicks.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>Fast Uploads</h3>
+                <p>We ensure that your files are uploaded quickly, with minimal wait time.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>Secure</h3>
+                <p>We take your privacy seriously. All uploaded files are securely stored and shared.</p>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need help, feel free to <a href="mailto:contact@fileservice.com" class="contact-link">email us</a>.</p>
+        </div>
+    </div>
+    <script src="script.js"></script> 
 </body>
 </html>
