@@ -16,9 +16,6 @@ This project is a secure file-sharing system built with Node.js. Users can uploa
 - Express.js
 - Multer (for file uploads)
 
-### Database
-- MongoDB (or local storage option)
-
 ### Frontend
 - HTML
 - CSS
@@ -26,7 +23,7 @@ This project is a secure file-sharing system built with Node.js. Users can uploa
 
 ### Hosting
 - GitHub (for frontend)
-- Render/Heroku (for backend deployment)
+- ngrok (for backend deployment)
 
 ## Project Structure
 ```
